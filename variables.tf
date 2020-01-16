@@ -28,7 +28,7 @@ variable "create" {
 }
 
 variable "project_name" {
-  description = "Log project name. If not set, a default name with prefix sls-module-project- will be returned."
+  description = "Log project name. If not set, a default name with prefix `sls-module-project-` will be returned."
   type        = string
   default     = ""
 }
@@ -40,7 +40,7 @@ variable "use_random_suffix" {
 }
 
 variable "store_name" {
-  description = "Log store name. If not set, a default name with prefix sls-module-store- will be returned."
+  description = "Log store name. If not set, a default name with prefix `sls-module-store-` will be returned."
   type        = string
   default     = ""
 }
