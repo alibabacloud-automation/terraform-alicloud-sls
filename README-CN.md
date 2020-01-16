@@ -2,22 +2,20 @@ Alibaba Cloud SLS Terraform Module
 terraform-alicloud-sls
 =====================================================================
 
-English | [简体中文](https://github.com/terraform-alicloud-modules/terraform-alicloud-sls/blob/master/README-CN.md)
+本 Module 用于在阿里云创建一套日志服务相关资源. 
 
-Terraform module which creates log service's resources (SLS) on Alibaba Cloud.
-
-These types of resources are supported:
+本 Module 支持创建以下资源:
 
 * [Log Project](https://www.terraform.io/docs/providers/alicloud/r/log_project.html)
 * [Log Store](https://www.terraform.io/docs/providers/alicloud/r/log_store.html)
 * [Log Store_index](https://www.terraform.io/docs/providers/alicloud/r/log_store_index.html)
 
 
-## Terraform versions
+## Terraform 版本
 
-This module requires Terraform 0.12.
+本模板要求使用版本 Terraform 0.12.
 
-## Usage
+## 用法
 
 ```hcl
 
@@ -73,24 +71,23 @@ module "sls-module" {
 }
 ```
 
-## Examples
+## 示例
 
-* [Basic example](https://github.com/terraform-alicloud-modules/terraform-alicloud-sls/tree/master/examples/basic)
+* [基本示例](https://github.com/terraform-alicloud-modules/terraform-alicloud-sls/tree/master/examples/basic)
 
-## Notes
+## 注意事项
 
-* This module using AccessKey and SecretKey are from `profile` and `shared_credentials_file`.
-If you have not set them yet, please install [aliyun-cli](https://github.com/aliyun/aliyun-cli#installation) and configure it.
+* 本 Module 使用的 AccessKey 和 SecretKey 可以直接从 `profile` 和 `shared_credentials_file` 中获取。如果未设置，可通过下载安装 [aliyun-cli](https://github.com/aliyun/aliyun-cli#installation) 后进行配置.
 
-Authors
+作者
 -------
 Created and maintained by Wang li(@Lexsss, 13718193219@163.com) and He Guimin(@xiaozhu36, heguimin36@163.com)
 
-License
+许可
 ----
 Apache 2 Licensed. See LICENSE for full details.
 
-Reference
+参考
 ---------
 * [Terraform-Provider-Alicloud Github](https://github.com/terraform-providers/terraform-provider-alicloud)
 * [Terraform-Provider-Alicloud Release](https://releases.hashicorp.com/terraform-provider-alicloud/)
