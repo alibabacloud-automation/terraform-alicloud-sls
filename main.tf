@@ -1,12 +1,3 @@
-provider "alicloud" {
-  version                 = ">=1.69.0"
-  profile                 = var.profile != "" ? var.profile : null
-  shared_credentials_file = var.shared_credentials_file != "" ? var.shared_credentials_file : null
-  region                  = var.region != "" ? var.region : null
-  skip_region_validation  = var.skip_region_validation
-  configuration_source    = "terraform-alicloud-modules/sls/alicloud"
-}
-
 resource "alicloud_log_project" "this" {
   count       = var.create ? 1 : 0
   name        = var.project_name == "" ? local.project_name : local.result_name
