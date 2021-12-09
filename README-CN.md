@@ -1,6 +1,6 @@
 Alibaba Cloud SLS Terraform Module   
 terraform-alicloud-sls
-=====================================================================
+
 
 本 Module 用于在阿里云创建一套日志服务相关资源. 
 
@@ -140,6 +140,7 @@ module "sls-module" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 0.12.0 |
+| <a name="requirement_alicloud"></a> [alicloud](#requirement\_alicloud) | >= 1.56.0 |
 
 作者
 -------
