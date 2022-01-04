@@ -3,6 +3,7 @@
 
 # .tfstate files
 *.tfstate
+*.terraform.*
 *.tfstate.*
 
 # Crash log files
@@ -28,3 +29,11 @@ override.tf.json
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
 *.log
+
+# others
+*.bak
+*.bk
+
+# tools files
+.DS_Store
+.idea
