@@ -1,7 +1,7 @@
 resource "alicloud_log_project" "this" {
   count       = var.create ? 1 : 0
   name        = var.project_name == "" ? local.project_name : local.result_name
-  description = "Create by modules/terraform-alicloud-sls"
+  description = var.description
 }
 
 resource "alicloud_log_store" "this" {
@@ -14,7 +14,6 @@ resource "alicloud_log_store" "this" {
   max_split_shard_count = var.store_max_split_shard_count
   append_meta           = var.store_append_meta
   enable_web_tracking   = var.store_enable_web_tracking
-
 }
 
 resource "alicloud_log_store_index" "this" {
