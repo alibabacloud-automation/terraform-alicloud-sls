@@ -1,4 +1,10 @@
 ## 1.2.0 (Unreleased)
+## 1.3.0 (February 22, 2022)
+
+ENHANCEMENTS:
+
+- Improves the module examples/complete [GH-6](https://github.com/terraform-alicloud-modules/terraform-alicloud-sls/pull/6)
+
 ## 1.1.0 (December 09, 2021)
 
 ENHANCEMENTS:
