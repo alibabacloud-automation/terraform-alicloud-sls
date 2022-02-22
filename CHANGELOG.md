@@ -1,5 +1,5 @@
-## 1.2.0 (Unreleased)
-## 1.3.0 (February 22, 2022)
+## 1.3.0 (Unreleased)
+## 1.2.0 (February 22, 2022)
 
 ENHANCEMENTS:
 
