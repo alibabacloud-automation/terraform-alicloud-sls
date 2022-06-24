@@ -23,7 +23,7 @@ module "sls-module" {
   #############
   #log project#
   #############
-  project_prefix              = "basic-project-name"
+  project_name                = "basic-project-name"
   
   ###########
   #log store#
