@@ -1,25 +1,4 @@
-variable "region" {
-  description = "(Deprecated from version 1.1.0) The region used to launch this module resources."
-  type        = string
-  default     = ""
-}
 
-variable "profile" {
-  description = "(Deprecated from version 1.1.0) The profile name as set in the shared credentials file. If not set, it will be sourced from the ALICLOUD_PROFILE environment variable."
-  type        = string
-  default     = ""
-}
-variable "shared_credentials_file" {
-  description = "(Deprecated from version 1.1.0) This is the path to the shared credentials file. If this is not set and a profile is specified, $HOME/.aliyun/config.json will be used."
-  type        = string
-  default     = ""
-}
-
-variable "skip_region_validation" {
-  description = "(Deprecated from version 1.1.0) Skip static validation of region ID. Used by users of alternative AlibabaCloud-like APIs or users w/ access to regions that are not public (yet)."
-  type        = bool
-  default     = false
-}
 
 #alicloud_log_project
 variable "create" {
@@ -89,11 +68,11 @@ variable "index_full_text" {
   type        = set(map(string))
   default = [
     {
-      // Whether the case sensitive. Default to false.
+      # Whether the case sensitive. Default to false.
       case_sensitive = false
-      // Whether includes the chinese. Default to false.
+      # Whether includes the chinese. Default to false.
       include_chinese = false
-      // The string of several split words, like "\r", "#"
+      # The string of several split words, like "\r", "#"
       token = "#"
     }
   ]
@@ -102,29 +81,29 @@ variable "index_full_text" {
 variable "index_field_search" {
   description = "List configurations of field search index."
   type = set(object({
-    // The field name, which is unique in the same log store.
+    # The field name, which is unique in the same log store.
     name = string
-    // The type of one field. Valid values: ["long", "text", "double", "json"]. Default to "long".
+    # The type of one field. Valid values: ["long", "text", "double", "json"]. Default to "long".
     type = string
-    // The alias of one field
+    # The alias of one field
     alias = string
-    // Whether the case sensitive for the field. Default to false. It is valid when "type" is "text" or "json".
+    # Whether the case sensitive for the field. Default to false. It is valid when "type" is "text" or "json".
     case_sensitive = bool
-    // Whether includes the chinese for the field. Default to false. It is valid when "type" is "text" or "json".
+    # Whether includes the chinese for the field. Default to false. It is valid when "type" is "text" or "json".
     include_chinese = bool
-    // The string of several split words, like "\r", "#". It is valid when "type" is "text" or "json".
+    # The string of several split words, like "\r", "#". It is valid when "type" is "text" or "json".
     token = string
-    // Whether to enable field analytics. Default to true.
+    # Whether to enable field analytics. Default to true.
     enable_analytics = bool
-    // Use nested index when type is json
+    # Use nested index when type is json
     json_keys = list(object({
-      // When using the json_keys field, this field is required.
+      # When using the json_keys field, this field is required.
       name = string
-      // The type of one field. Valid values: ["long", "text", "double"]. Default to "long"
+      # The type of one field. Valid values: ["long", "text", "double"]. Default to "long"
       type = string
-      // The alias of one field.
+      # The alias of one field.
       alias = string
-      // Whether to enable statistics. default to true.
+      # Whether to enable statistics. default to true.
       doc_value = bool
     }))
   }))

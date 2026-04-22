@@ -7,7 +7,7 @@ resource "alicloud_log_project" "this" {
 resource "alicloud_log_store" "this" {
   count                 = var.create ? 1 : 0
   name                  = var.store_name == "" ? local.store_name : var.store_name
-  project               = concat(alicloud_log_project.this.*.name, [""])[0]
+  project               = concat(alicloud_log_project.this[*].name, [""])[0]
   retention_period      = var.store_retention_period
   shard_count           = var.store_shard_count
   auto_split            = var.store_auto_split
@@ -18,8 +18,8 @@ resource "alicloud_log_store" "this" {
 
 resource "alicloud_log_store_index" "this" {
   count    = var.create ? 1 : 0
-  logstore = concat(alicloud_log_store.this.*.name, [""])[0]
-  project  = concat(alicloud_log_project.this.*.name, [""])[0]
+  logstore = concat(alicloud_log_store.this[*].name, [""])[0]
+  project  = concat(alicloud_log_project.this[*].name, [""])[0]
   dynamic "full_text" {
     for_each = var.index_full_text
     content {
